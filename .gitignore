@@ -15,3 +15,6 @@
 local.properties
 /.idea
 network_security_config.xml
+/app/build
+/app/release
+/app/debug
