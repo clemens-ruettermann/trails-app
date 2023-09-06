@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_news">
+
+    <fragment
+        android:id="@+id/nav_news"
+        android:name="com.kenspeckle.trails.ui.news.NewsFragment"
+        android:label="@string/menu_news"
+        tools:layout="@layout/fragment_news" >
+        <action
+            android:id="@+id/action_nav_news_to_selectedNewsFragment"
+            app:destination="@id/selectedNewsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_q_and_a"
+        android:name="com.kenspeckle.trails.ui.q_and_a.QAndAFragment"
+        android:label="@string/menu_q_and_a"
+        tools:layout="@layout/fragment_q_and_a" >
+        <action
+            android:id="@+id/action_nav_news_to_selectedQAndAFragment"
+            app:destination="@id/selectedQAndAFragment" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_events"
+        android:name="com.kenspeckle.trails.ui.events.EventFragment"
+        android:label="@string/menu_events"
+        tools:layout="@layout/fragment_events">
+    <action
+        android:id="@+id/action_nav_events_to_selectedEventFragment"
+        app:destination="@id/selectedEventFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectedNewsFragment"
+        android:name="com.kenspeckle.trails.ui.news.SelectedNewsFragment"
+        android:label="Neuigkeiten"
+        tools:layout="@layout/fragment_selected_news" >
+        <argument
+            android:name="newsDto"
+            app:argType="com.kenspeckle.trails.dtos.NewsDto" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectedEventFragment"
+        android:name="com.kenspeckle.trails.ui.events.SelectedEventFragment"
+        android:label="Termine"
+        tools:layout="@layout/fragment_selected_event" >
+        <argument
+            android:name="eventDto"
+            app:argType="com.kenspeckle.trails.dtos.EventDto" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/selectedQAndAFragment"
+        android:name="com.kenspeckle.trails.ui.q_and_a.SelectedQAndAFragment"
+        android:label="Fragen &amp; Antworten"
+        tools:layout="@layout/fragment_selected_q_and_a" >
+        <argument
+            android:name="qAndADto"
+            app:argType="com.kenspeckle.trails.dtos.QAndADto" />
+    </fragment>
+</navigation>
