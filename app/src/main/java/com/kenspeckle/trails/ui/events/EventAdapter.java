@@ -91,13 +91,13 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
                 if (eventDto.getCurrentAttendees() != null) {
                     sb.append(eventDto.getCurrentAttendees());
                 } else {
-                    sb.append(eventDto.getCurrentAttendees());
+                    sb.append("0");
                 }
                 sb.append(" / ");
                 if (eventDto.getMaxAttendees() != null) {
                     sb.append(eventDto.getMaxAttendees());
                 } else {
-                    sb.append(eventDto.getMaxAttendees());
+                    sb.append("0");
                 }
                 sb.append(" angemeldet");
                 nbrAttendants.setText(sb.toString());
