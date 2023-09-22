@@ -6,7 +6,8 @@
     <string name="menu_q_and_a">Fragen &amp; Antworten</string>
     <string name="menu_news">Neuigkeiten</string>
     <string name="menu_events">Termine</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="menu_course_assets">Kursmaterialien</string>
+    <string name="title_activity_login">Login</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Anmelden</string>
@@ -14,4 +15,14 @@
     <string name="welcome">"Welcome !"</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_super">SuperActivity</string>
+    <string name="waffen">Waffen</string>
+    <string name="sonstiges">Sonstiges</string>
+    <string name="schalenwild">Schalenwild</string>
+    <string name="recht">Recht</string>
+    <string name="organisation">Organisation</string>
+    <string name="niederwild">Niederwild</string>
+    <string name="jagdpraxis">Jagdpraxis</string>
+    <string name="jagdhunde">Jagdhunde</string>
+    <string name="angemeldet">Angemeldet</string>
+    <string name="nicht_angemeldet">Nicht Angemeldet</string>
 </resources>

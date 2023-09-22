@@ -5,8 +5,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.kenspeckle.trails.RetrofitClient;
 import com.kenspeckle.trails.data.LoginRepository;
+import com.kenspeckle.trails.RetrofitClient;
 import com.kenspeckle.trails.ui.login.LoginActivity;
 
 import java.io.IOException;

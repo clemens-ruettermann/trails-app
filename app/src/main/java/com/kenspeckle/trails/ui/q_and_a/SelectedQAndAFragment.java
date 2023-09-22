@@ -46,7 +46,6 @@ public class SelectedQAndAFragment extends Fragment {
 		binding.selectedQAndAAuthor.setText(qAndADto.getAuthor().getName());
 		binding.selectedQAndADate.setText(DateUtils.convertLocalDateTimeToLocalizedDateTime(qAndADto.getCreationDate()));
 
-
 		RecyclerView recyclerView = binding.selectedQAndARecyclerView;
 		recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 		recyclerView.addItemDecoration(new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL));

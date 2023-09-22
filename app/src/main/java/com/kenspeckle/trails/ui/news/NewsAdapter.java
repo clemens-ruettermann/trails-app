@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.kenspeckle.trails.R;
 import com.kenspeckle.trails.dtos.AuthorDto;
 import com.kenspeckle.trails.dtos.NewsDto;
+import com.kenspeckle.trails.ui.news.NewsFragmentDirections;
 import com.kenspeckle.trails.utils.DateUtils;
 
 import java.util.List;
@@ -69,7 +70,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 			title.setText(newsDto.getTitle());
 
 			teaser.setText(Html.fromHtml(newsDto.getTeaser(), Html.FROM_HTML_MODE_COMPACT));
-
 			AuthorDto authorDto = newsDto.getAuthor();
 			if (authorDto != null) {
 				author.setText(authorDto.getName());

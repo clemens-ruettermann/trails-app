@@ -4,6 +4,7 @@ import com.kenspeckle.trails.data.TimeFrame;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.Objects;
 import java.util.UUID;
 
 public class EventDto implements Serializable {
@@ -136,5 +137,18 @@ public class EventDto implements Serializable {
 
 	public void setTimeFrame(TimeFrame timeFrame) {
 		this.timeFrame = timeFrame;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		EventDto eventDto = (EventDto) o;
+		return Objects.equals(id, eventDto.id);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
 	}
 }

@@ -7,13 +7,13 @@
     android:layout_height="match_parent">
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:layout_margin="16dp"
-    tools:context=".ui.events.SelectedEventFragment"
+    tools:context="com.kenspeckle.trails.ui.events.SelectedEventFragment"
     android:scrollbars = "vertical">
 
     <TextView
-        android:id="@+id/selectedEventTitle"
+        android:id="@+id/selected_event_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
@@ -22,28 +22,38 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/selectedEventBody"
+        android:id="@+id/selected_event_body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:scrollbars = "vertical"
         android:textIsSelectable="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedEventTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/selected_event_title" />
 
     <TextView
-        android:id="@+id/selectedEventAuthor"
+        android:id="@+id/selected_event_author"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textIsSelectable="true"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedEventBody" />
+        app:layout_constraintTop_toBottomOf="@+id/selected_event_body" />
 
     <TextView
-        android:id="@+id/selectedEventDate"
+        android:id="@+id/selected_event_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textIsSelectable="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/selectedEventBody" />
+        app:layout_constraintTop_toBottomOf="@+id/selected_event_body" />
+
+
+    <CheckBox
+        android:id="@+id/selected_event_registration_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/angemeldet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selected_event_date" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

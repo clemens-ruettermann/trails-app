@@ -18,54 +18,55 @@ import java.util.List;
 
 public class SelectedQAndAAdapter extends RecyclerView.Adapter<SelectedQAndAAdapter.SelectedQAndAViewHolder>{
 
-    private final List<AnswerDto> answerList;
+	private final List<AnswerDto> answerList;
 
-    public SelectedQAndAAdapter(List<AnswerDto> answers) {
-        this.answerList = answers;
-    }
-
-    @NonNull
-    @Override
-    public SelectedQAndAViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.selected_q_and_a_list_item, parent, false);
-
-        return new SelectedQAndAViewHolder(view);
-    }
+	public SelectedQAndAAdapter(List<AnswerDto> answers) {
+		this.answerList = answers;
+	}
 
 
-    @Override
-    public void onBindViewHolder(@NonNull SelectedQAndAViewHolder holder, int position) {
-        AnswerDto answerDto = answerList.get(position);
-        holder.body.setText(Html.fromHtml(answerDto.getBody(), Html.FROM_HTML_MODE_COMPACT));
-        AuthorDto authorDto = answerDto.getAuthor();
-        if (authorDto != null) {
-            holder.author.setText(authorDto.getName());
-        }
+	@NonNull
+	@Override
+	public SelectedQAndAViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+		View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.selected_q_and_a_list_item, parent, false);
 
-        if (answerDto.getAccepted() != null && answerDto.getAccepted()) {
-            holder.itemView.setBackgroundColor(holder.itemView.getResources().getColor(R.color.accepted_question));
-        }
-
-        holder.date.setText(DateUtils.convertLocalDateTimeToLocalizedDateTime(answerDto.getCreationDate()));
-    }
+		return new SelectedQAndAViewHolder(view);
+	}
 
 
-    @Override
-    public int getItemCount() {
-        return answerList.size();
-    }
+	@Override
+	public void onBindViewHolder(@NonNull SelectedQAndAViewHolder holder, int position) {
+		AnswerDto answerDto = answerList.get(position);
+		holder.body.setText(Html.fromHtml(answerDto.getBody(), Html.FROM_HTML_MODE_COMPACT));
+		AuthorDto authorDto = answerDto.getAuthor();
+		if (authorDto != null) {
+			holder.author.setText(authorDto.getName());
+		}
 
-    public static class SelectedQAndAViewHolder extends RecyclerView.ViewHolder {
+		if (answerDto.getAccepted() != null && answerDto.getAccepted()) {
+			holder.itemView.setBackgroundColor(holder.itemView.getResources().getColor(R.color.accepted_question));
+		}
 
-        private final TextView body;
-        private final TextView author;
-        private final TextView date;
+		holder.date.setText(DateUtils.convertLocalDateTimeToLocalizedDateTime(answerDto.getCreationDate()));
+	}
 
-        public SelectedQAndAViewHolder(@NonNull View itemView) {
-            super(itemView);
-            body = itemView.findViewById(R.id.selected_q_and_a_body);
-            author = itemView.findViewById(R.id.selected_q_and_a_author);
-            date = itemView.findViewById(R.id.selected_q_and_a_date);
-        }
-    }
+
+	@Override
+	public int getItemCount() {
+		return answerList.size();
+	}
+
+	public static class SelectedQAndAViewHolder extends RecyclerView.ViewHolder {
+
+		private final TextView body;
+		private final TextView author;
+		private final TextView date;
+
+		public SelectedQAndAViewHolder(@NonNull View itemView) {
+			super(itemView);
+			body = itemView.findViewById(R.id.selected_q_and_a_body);
+			author = itemView.findViewById(R.id.selected_q_and_a_author);
+			date = itemView.findViewById(R.id.selected_q_and_a_date);
+		}
+	}
 }

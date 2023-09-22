@@ -7,6 +7,7 @@ import android.view.MenuItem;
 
 import com.kenspeckle.trails.R;
 import com.kenspeckle.trails.data.LoginRepository;
+import com.kenspeckle.trails.databinding.ActivityMainBinding;
 import com.kenspeckle.trails.ui.login.LoginActivity;
 import com.google.android.material.navigation.NavigationView;
 
@@ -16,8 +17,6 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.kenspeckle.trails.databinding.ActivityMainBinding;
 
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		com.kenspeckle.trails.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+		ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
 		setContentView(binding.getRoot());
 
 		setSupportActionBar(binding.appBarMain.toolbar);
@@ -39,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 		// Passing each menu ID as a set of Ids because each
 		// menu should be considered as top level destinations.
 		mAppBarConfiguration = new AppBarConfiguration.Builder(
-				R.id.nav_q_and_a, R.id.nav_news, R.id.nav_events)
+				R.id.nav_q_and_a, R.id.nav_news, R.id.nav_events, R.id.nav_course_assets)
 				.setOpenableLayout(drawer)
 				.build();
 		NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);

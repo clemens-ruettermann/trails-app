@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+
 import com.kenspeckle.trails.data.LoginRepository;
 import com.kenspeckle.trails.databinding.ActivityLoginBinding;
 import com.kenspeckle.trails.ui.MainActivity;
@@ -22,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		com.kenspeckle.trails.databinding.ActivityLoginBinding binding = ActivityLoginBinding.inflate(getLayoutInflater());
+		ActivityLoginBinding binding = ActivityLoginBinding.inflate(getLayoutInflater());
 		setContentView(binding.getRoot());
 
 		final EditText usernameEditText = binding.username;

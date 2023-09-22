@@ -15,11 +15,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.kenspeckle.trails.Api;
-import com.kenspeckle.trails.Constants;
 import com.kenspeckle.trails.RetrofitClient;
 import com.kenspeckle.trails.databinding.FragmentNewsBinding;
 import com.kenspeckle.trails.dtos.BaseDto;
 import com.kenspeckle.trails.dtos.NewsDto;
+import com.kenspeckle.trails.Constants;
 import com.kenspeckle.trails.ui.EndlessRecyclerViewScrollListener;
 import com.kenspeckle.trails.ui.login.LoginActivity;
 
@@ -68,7 +68,7 @@ public class NewsFragment extends Fragment {
 
 	private void loadData(int page) {
 		try {
-			Api api = RetrofitClient.getClient().create(Api.class);
+			Api api = RetrofitClient.getApi();
 
 			Call<BaseDto<NewsDto>> call = api.getNews(page, Constants.PAGE_SIZE);
 			call.enqueue(new Callback<>() {

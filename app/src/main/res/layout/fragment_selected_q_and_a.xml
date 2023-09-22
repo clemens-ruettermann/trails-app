@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
-    tools:context=".ui.q_and_a.SelectedQAndAFragment"
+    tools:context="com.kenspeckle.trails.ui.q_and_a.SelectedQAndAFragment"
     android:scrollbars = "vertical">
 
     <TextView
@@ -33,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="test"
+        android:textIsSelectable="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selectedQAndABody" />
 
@@ -54,5 +55,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/selectedQAndAAuthor" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
