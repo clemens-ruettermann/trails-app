@@ -100,9 +100,17 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.EventViewHol
 
 			teaser.setText(Html.fromHtml(eventDto.getDescription(), Html.FROM_HTML_MODE_COMPACT));
 
+			if (eventDto.getStartDate() == null || eventDto.getStartTime() == null || eventDto.getEndDate() == null || eventDto.getEndTime() == null) {
+				System.out.println();
+			}
 			String startTime = DateUtils.convertSeperateDateAndTimeString(eventDto.getStartDate(), eventDto.getStartTime());
-			String endTime = DateUtils.convertSeperateDateAndTimeString(eventDto.getEndDate(), eventDto.getEndTime());
-			date.setText(startTime + " - " + endTime);
+			if (eventDto.getEndDate() != null) {
+				String endTime = DateUtils.convertSeperateDateAndTimeString(eventDto.getEndDate(), eventDto.getEndTime());
+				date.setText(startTime + " - " + endTime);
+			} else {
+				date.setText(startTime);
+			}
+
 
 			if (eventDto.isRegistrationEnabled()) {
 				setRegistrationEnabled(eventDto);

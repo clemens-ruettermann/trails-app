@@ -48,8 +48,12 @@ public class SelectedEventFragment extends Fragment {
 		binding.selectedEventBody.setText(Html.fromHtml(dto.getDescription(), Html.FROM_HTML_MODE_COMPACT));
 		binding.selectedEventAuthor.setText(dto.getAuthor().getName());
 		String startTime = DateUtils.convertSeperateDateAndTimeString(dto.getStartDate(), dto.getStartTime());
-		String endTime = DateUtils.convertSeperateDateAndTimeString(dto.getEndDate(), dto.getEndTime());
-		binding.selectedEventDate.setText(startTime + " - " + endTime);
+		if (dto.getEndDate() != null) {
+			String endTime = DateUtils.convertSeperateDateAndTimeString(dto.getEndDate(), dto.getEndTime());
+			binding.selectedEventDate.setText(startTime + " - " + endTime);
+		} else {
+			binding.selectedEventDate.setText(startTime);
+		}
 		if (dto.isRegistrationEnabled()) {
 			binding.selectedEventRegistrationCheckbox.setVisibility(View.VISIBLE);
 
